@@ -1,0 +1,138 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+<!-- script files referenced-->
+@Scripts.Render("~/bundles/homejs")
+
+@*<div ng-app="HomeApp" ng-controller="HomeController">
+
+    <hr />
+
+    <div class="header-info">
+        <label class="">Employee Details</label>
+        <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#AddModal" ng-click="clearModel()">Add Employee</button>
+    </div>
+    <hr />
+    <br />
+    <div class="alert alert-success" ng-if="message">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        {{message}}
+    </div>
+    <div class="table-data">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Email Address</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="names in employee">
+                    <td>{{ names.ID }}</td>
+                    <td>{{ names.Name }}</td>
+                    <td>{{ names.Email }}</td>
+                    <td><button class="btn btn-info" data-toggle="modal" data-target="#EditModal" ng-click="selectUser(names)">Edit</button></td>
+                    <td><button class="btn btn-danger" ng-click="DeleteEmployee(names)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- Modal Add modal-->
+    <div class="modal fade" id="AddModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <form name="employee_form" data-ng-submit="AddEmployee()">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h4 class="modal-title">Add Employee Details</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">User Name</label>
+                            <input type="text" class="form-control" id="fullname" aria-describedby="emailHelp" placeholder="Enter Full Name" ng-model="model.Name" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" ng-model="model.Email" required="required">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-default pull-left">Save</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Edit modal-->
+    <div class="modal fade" id="EditModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <form name="employee_form" data-ng-submit="UpdateEmployee()">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h4 class="modal-title">Edit Employee Details</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">User Name</label>
+                            <input type="text" class="form-control" id="fullname" aria-describedby="emailHelp" placeholder="Enter FullName" ng-model="selectedUser.Name" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" ng-model="selectedUser.Email" required="required">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary pull-left">Save</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>*@
+
+<div ng-app="myApp">
+    <div class="container">
+        <h2>Index</h2>
+        <hr />
+        <div ng-controller="homeController">
+            <div class="row">
+                <div class="col-sm-3">
+                    Enter your name:
+                </div>
+                <div class="col-sm-5">
+                    <input type="text" ng-model="yourName" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    Your Name is:
+                </div>
+                <div class="col-sm-5">
+                    <h4>{{yourName}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   
